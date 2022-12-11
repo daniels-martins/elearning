@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -20,13 +21,16 @@ return new class extends Migration
          $table->string('pace', 10)->nullable(); //fast slow
 
          // mode of learning
-         $table->integer('video', 10)->nullable(); //scale of 1-10
-         $table->integer('audio', 10)->nullable(); //scale of 1-10
-         $table->integer('text', 10)->nullable(); //scale of 1-10
-         $table->integer('practicals', 10)->nullable(); //scale of 1-10
-         $table->integer('theories', 10)->nullable(); //scale of 1-10
-         $table->integer('self_paced', 10)->nullable(); //scale of 1-10
-         $table->integer('instructor_led', 10)->nullable(); //scale of 1-10
+         $table->tinyInteger('video')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('audio')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('text')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('practicals')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('theories')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('self_paced')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('instructor_led')->unsigned()->nullable(); //scale of 1-10
+
+         // foreign key
+         $table->foreignIdFor(User::class);
          $table->timestamps();
       });
    }

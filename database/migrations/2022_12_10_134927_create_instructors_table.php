@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('smart_profiles', function (Blueprint $table) {
+        Schema::create('instructors', function (Blueprint $table) {
             $table->id();
+            $table->string('fname', 20)->nullable();
+            $table->string('lname', 20)->nullable();
+            $table->tinyInteger('age')->unsigned()->nullable();
+            $table->string('dob')->nullable();
+            $table->string('dept', 50)->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('smart_profiles');
+        Schema::dropIfExists('instructors');
     }
 };

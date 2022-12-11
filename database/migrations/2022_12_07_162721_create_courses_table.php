@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Instructor;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -19,11 +20,9 @@ return new class extends Migration
             $table->string('title', 40);
             $table->string('code', 10);
 
-
             // foreign keys
-            $table->foreignIdFor(User::class);//
-
-
+            $table->foreignIdFor(Instructor::class)->nullable();//
+            
             $table->timestamps();
         });
     }

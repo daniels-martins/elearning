@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Instructor;
 use Illuminate\Http\Request;
-use App\Models\LearningPreference;
-use Illuminate\Support\Facades\Schema;
 
-class LearningPreferenceController extends Controller
+class InstructorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +14,7 @@ class LearningPreferenceController extends Controller
      */
     public function index()
     {
-      //   format this route to be pretty
-      $this_route = ucwords( str_replace('_', ' ', basename( url()->current() ) ) );
-
-      $preference_iterator = Schema::getColumnListing('learning_preferences');
-
-      // lets filter the iterator
-      $outOfBounds = ['id', 'created_at', 'updated_at'];
-      
-      $preference_iterator = array_filter($preference_iterator,  fn ($value) => !in_array($value, $outOfBounds));
-
-
-      return view('student.learning_style.index', compact('this_route', 'preference_iterator'));
+        //
     }
 
     /**
@@ -53,10 +41,10 @@ class LearningPreferenceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LearningPreference  $learningPreference
+     * @param  \App\Models\Instructor  $instructor
      * @return \Illuminate\Http\Response
      */
-    public function show(LearningPreference $learningPreference)
+    public function show(Instructor $instructor)
     {
         //
     }
@@ -64,10 +52,10 @@ class LearningPreferenceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LearningPreference  $learningPreference
+     * @param  \App\Models\Instructor  $instructor
      * @return \Illuminate\Http\Response
      */
-    public function edit(LearningPreference $learningPreference)
+    public function edit(Instructor $instructor)
     {
         //
     }
@@ -76,10 +64,10 @@ class LearningPreferenceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LearningPreference  $learningPreference
+     * @param  \App\Models\Instructor  $instructor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LearningPreference $learningPreference)
+    public function update(Request $request, Instructor $instructor)
     {
         //
     }
@@ -87,10 +75,10 @@ class LearningPreferenceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LearningPreference  $learningPreference
+     * @param  \App\Models\Instructor  $instructor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LearningPreference $learningPreference)
+    public function destroy(Instructor $instructor)
     {
         //
     }

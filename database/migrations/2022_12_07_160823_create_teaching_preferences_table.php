@@ -19,12 +19,13 @@ return new class extends Migration
          $table->string('level', 10)->nullable(); //hard easy medium
          $table->string('pace', 10)->nullable(); //fast slow
          // mode of teaching
-         $table->integer('video', 10)->nullable();//scale of 1-10
-         $table->integer('audio', 10)->nullable();//scale of 1-10
-         $table->integer('text', 10)->nullable();//scale of 1-10
-         $table->integer('practicals', 10)->nullable();//scale of 1-10
-         $table->integer('theories', 10)->nullable();//scale of 1-10
-         $table->integer('interactive', 10)->nullable();//scale of 1-10
+         $table->tinyInteger('video')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('audio')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('text')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('practicals')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('theories')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('self_paced')->unsigned()->nullable(); //scale of 1-10
+         $table->tinyInteger('interactive')->unsigned()->nullable(); //scale of 1-10
 
          $table->timestamps();
       });

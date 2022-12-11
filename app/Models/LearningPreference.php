@@ -7,5 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class LearningPreference extends Model
 {
-    use HasFactory;
+   use HasFactory;
+
+   protected $table = 'learning_preferences';
+
+
+
+   // Relationships
+   
+
+   public function owner()
+   {
+      return $this->belongsTo(User::class);
+   }
+
 }

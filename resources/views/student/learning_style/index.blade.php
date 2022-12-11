@@ -13,13 +13,11 @@
                @if (request()->routeIs('dashboard'))  bg-gray-200 @endif   ">
                Dashboard
             </a>
-            <a href="{{route('courses.index')}}"
-               class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
+            <a href="{{route('courses.index')}}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
                @if (request()->routeIs('courses.index'))  bg-gray-200 @endif   ">
                Courses
             </a>
-            <a href="{{ route('learning_preference.index') }}"
-               class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
+            <a href="{{ route('learning_preference.index') }}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
                @if (request()->routeIs('learning_preference.index'))  bg-gray-200 @endif   ">
                Learning preference
             </a>
@@ -38,7 +36,23 @@
             </div>
 
             <div class="p-10 grid-cols-3 bg-gray-200 rounded-lg">
-               <div class="flex gap-3">
+               <div class="grid grid-cols-2 gap-3">
+                  @foreach ($preference_iterator as $i)
+                  <a href="#"
+                     class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                     <p class="font-normal text-gray-700 dark:text-gray-400">
+                        {{-- {{ Auth::user()->learningPreference->$i ?? 'nil data for '. $i}} --}}
+
+                        
+                        {{ Auth::user()->presentLearningPreference($i) ?? 'nil data for '. $i}}
+
+                        smart web agent for education content creation
+                     </p>
+                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">21 Learner</h5>
+                  </a>
+
+                  @endforeach
+
                   <a href="#"
                      class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                      <p class="font-normal text-gray-700 dark:text-gray-400">Total Users.</p>
@@ -57,7 +71,7 @@
                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">52 Minutes</h5>
                   </a>
                </div>
-               <div class="flex gap-3 mt-4">
+               {{-- <div class="flex gap-3 mt-4">
                   <a href="#"
                      class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                      <p class="font-normal text-gray-700 dark:text-gray-400">Total Content.</p>
@@ -76,7 +90,7 @@
                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">30</h5>
                   </a>
 
-               </div>
+               </div> --}}
 
             </div>
          </div>
