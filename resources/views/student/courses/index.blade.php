@@ -43,11 +43,14 @@
                   <div
                      class=" p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                      <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Numerical
-                           Analysis (MTH211)</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Introduction to Computing (CSC110)</h5>
                      </a>
-                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        Course Code : CSC110 <br>
+                        Course Title : Introduction to Computing <br>
+                        Credits : 3	 <br>
+                        Status : Core <br>
+                     </p>
                      <a href="#"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Register this course
@@ -64,11 +67,14 @@
                   <div
                      class=" p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                      <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Numerical
-                           Analysis (MTH211)</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Algebra and Trigonometry (MTH110)</h5>
                      </a>
-                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        Course Code : MTH110 <br>
+                        Course Title : Algebra and Trigonometry <br>
+                        Credits : 3	 <br>
+                        Status : Core <br>
+                     </p>
                      <a href="#"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Register this course
@@ -84,11 +90,14 @@
                   <div
                      class=" p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                      <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Numerical
-                           Analysis (MTH211)</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Calculus (MTH112)</h5>
                      </a>
-                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        Course Code : MTH112 <br>
+                        Course Title : Calculus <br>
+                        Credits : 3	 <br>
+                        Status : Core <br>
+                     </p>
                      <a href="#"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Register this course
@@ -104,11 +113,14 @@
                   <div
                      class=" p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                      <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Numerical
-                           Analysis (MTH211)</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mechanics, Thermal Physics	 (PHY111)</h5>
                      </a>
-                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        Course Code : PHY111 <br>
+                        Course Title : Mechanics, Thermal Physics <br>
+                        Credits : 3	 <br>
+                        Status : Core <br>
+                     </p>
                      <a href="#"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Register this course
@@ -124,11 +136,16 @@
                   <div
                      class=" p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                      <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Numerical
-                           Analysis (MTH211)</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Use of English I (GST111)</h5>
                      </a>
-                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                           Course Code : GST111 <br>
+                           Course Title : Use of English I <br>
+                           Credits : 2	 <br>
+                           Status : Core <br>
+                        </p>
+                     </p>
                      <a href="#"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Register this course
@@ -148,19 +165,19 @@
                   <a href="#"
                      class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                      <p class="font-normal text-gray-700 dark:text-gray-400">Total Content.</p>
-                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">80 Contents</h5>
+                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">30 Contents</h5>
                   </a>
 
                   <a href="#"
                      class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                      <p class="font-normal text-gray-700 dark:text-gray-400">Total Courses.</p>
-                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">42</h5>
+                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">55</h5>
                   </a>
 
                   <a href="#"
                      class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                      <p class="font-normal text-gray-700 dark:text-gray-400">Total Quiz</p>
-                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">30</h5>
+                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">55</h5>
                   </a>
 
                </div>
