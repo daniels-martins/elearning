@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Models\Student;
+use App\Events\StudentCreated;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -26,7 +27,7 @@ class AppendDefaultLearningPreferences
     * @param  object  $event
     * @return void
     */
-   public function handle($event)
+   public function handle(StudentCreated $event)
    {
       // dd('oly');
       dd($event);
