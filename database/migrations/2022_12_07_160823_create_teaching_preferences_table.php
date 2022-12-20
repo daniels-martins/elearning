@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Instructor;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -27,6 +28,9 @@ return new class extends Migration
          $table->tinyInteger('self_paced')->unsigned()->nullable(); //scale of 1-10
          $table->tinyInteger('interactive')->unsigned()->nullable(); //scale of 1-10
 
+
+          // foreign key
+          $table->foreignIdFor(Instructor::class);
          $table->timestamps();
       });
    }

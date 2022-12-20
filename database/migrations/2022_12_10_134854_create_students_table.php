@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Course;
+use App\Models\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -26,6 +26,8 @@ return new class extends Migration
             $table->boolean('nerd')->nullable();
 
             // foreign keys
+            $table->foreignIdFor(User::class)->onDelete('cascade');
+
             $table->timestamps();
         });
     }

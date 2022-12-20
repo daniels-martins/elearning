@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class LearningPreference extends Model
 {
@@ -11,14 +12,14 @@ class LearningPreference extends Model
 
    protected $table = 'learning_preferences';
 
-
+   protected $guarded = ['id', 'student_id', 'user_id'];
 
    // Relationships
    
 
    public function owner()
    {
-      return $this->belongsTo(User::class);
+      return $this->belongsTo(Student::class);
    }
 
 }

@@ -1,28 +1,14 @@
 <x-app-layout>
    <x-slot name="header">
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-         {{ $this_route }}
+         {{ thisRoute() }}
       </h2>
    </x-slot>
 
    <div class="p-12">
       <div class="grid grid-cols-5 grid-flow-col gap-4">
-         {{-- side bar --}}
-         <div class="col-span-1 ">
-            <a href="{{ route('dashboard') }}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
-               @if (request()->routeIs('dashboard'))  bg-gray-200 @endif   ">
-               Dashboard
-            </a>
-            <a href="{{route('courses.index')}}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
-               @if (request()->routeIs('courses.index'))  bg-gray-200 @endif   ">
-               Courses
-            </a>
-            <a href="{{ route('learning_preference.index') }}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
-               @if (request()->routeIs('learning_preference.index'))  bg-gray-200 @endif   ">
-               Learning preference
-            </a>
-
-         </div>
+        {{-- side bar --}}
+        @include('student.partials.sidebar')
 
          {{-- main content --}}
          <div class="col-span-4 rounded-lg">
@@ -43,17 +29,16 @@
                      <p class="font-normal text-gray-700 dark:text-gray-400">
                         {{-- {{ Auth::user()->learningPreference->$i ?? 'nil data for '. $i}} --}}
 
-                        
-                        {{ Auth::user()->presentLearningPreference($i) ?? 'nil data for '. $i}}
-
-                        smart web agent for education content creation
+                        <b class="text-2xl uppercase">{{ $i }} Lessons</b> <br>
+                        {{-- smart web agent for education content creation --}}
+                      <b class="capitalize">{{ Auth::user()->name }}</b>  {{ $student->presentLearningPreference($i) }}
                      </p>
-                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">21 Learner</h5>
+                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ Auth::user()->preferences->$i * 10 }}% of {{ Auth::user()->name }}'s Courses are tailored this way</h5>
                   </a>
 
                   @endforeach
 
-                  <a href="#"
+                  {{-- <a href="#"
                      class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                      <p class="font-normal text-gray-700 dark:text-gray-400">Total Users.</p>
                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">21 Learner</h5>
@@ -70,7 +55,7 @@
                      <p class="font-normal text-gray-700 dark:text-gray-400">Average Access time.</p>
                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">52 Minutes</h5>
                   </a>
-               </div>
+               </div> --}}
                {{-- <div class="flex gap-3 mt-4">
                   <a href="#"
                      class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">

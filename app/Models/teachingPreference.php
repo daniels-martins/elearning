@@ -2,10 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Instructor;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class teachingPreference extends Model
+class TeachingPreference extends Model
 {
-    use HasFactory;
+   use HasFactory;
+
+   protected $table = 'teaching_preferences';
+
+   protected $guarded = ['id', 'student_id', 'user_id'];
+
+   public function owner()
+   {
+      return $this->belongsTo(Instructor::class);
+   }
 }

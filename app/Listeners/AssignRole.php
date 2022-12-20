@@ -5,7 +5,9 @@ namespace App\Listeners;
 use App\Models\Admin;
 use App\Models\Student;
 use App\Models\Instructor;
+use App\Events\AdminCreated;
 use App\Events\StudentCreated;
+use App\Events\InstructorCreated;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -35,29 +37,29 @@ class AssignRole
       $user = $event->user;
 
       // Please no relationships, do manual implementation
-
+      // {udo} will work on this later, all of them events need to be created
       switch ($user->role) {
          case 'instructor':
             # create instructor profile...
-            Instructor::create([
+            $newInstructor = Instructor::create([
                'user_id' => $user->id,
                'fname' => $user->name,
             ]);
-
+            event(new InstructorCreated($newInstructor));   // Dispatch event
          default:
             # create student profile...
             if (in_array($user->email, $adminEmails)) {
-               Admin::create([
+               $newAdmin = Admin::create([
                   'user_id' => $user->id,
                   'fname' => $user->name,
                ]);
+               event(new AdminCreated($newAdmin));   // Dispatch event
+
             } else {
                $newStudent = Student::create([
                   'user_id' => $user->id,
                   'fname' => $user->name,
                ]);
-               // Dispatch event
-               event(new StudentCreated($newStudent));
             }
             break;
       }

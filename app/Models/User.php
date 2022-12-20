@@ -28,78 +28,102 @@ class User extends Authenticatable
    /**
     * Check if the user is a student or learner
     */
-   public function isLearner(User $user)
+   public function isLearner()
    {
-      return $user->role == 'student';
+      return $this->role == 'student';
    }
 
    /**
     * Check if the user is an instructor or teacher
     */
-   public function isTeacher(User $user)
+   public function isTeacher()
    {
-      return $user->role == 'instructor';
+      return $this->role == 'instructor';
    }
 
    /**
     * Check if the user is an admin
     */
-   public function isAdmin(User $user)
+   public function isAdmin()
    {
-      return $user->role == 'admin';
+      return $this->role == 'admin';
    }
 
 
-   // Relationships
-
-   public function learningPreference()
+   /**
+    * get the user fullname
+    */
+   public function fullname()
    {
-      return $this->hasOne(LearningPreference::class);
+      if ($this->isLearner())
+         return $this->getStudent('fname') . ' ' . $this->getStudent('lname');
+
+
+      else if ($this->isTeacher())
+         return $this->getInstructor('fname') . ' ' . $this->getStudent('lname');
+
+
+      else if ($this->isAdmin())
+         return $this->getAdmin('fname') . ' ' . $this->getStudent('lname');
    }
 
 
-
-
-   // presenter
-
-   public function presentLearningPreference(string $param): string
+   // getting the preferences based on the user type this is for views not for controllers or models
+   /**
+    * this returns the user preferences (eloquent) relationship based on the user type.
+    */
+   public function preferences()
    {
-
-      // AI programming has begun .... alot of if statements bro
-      // use a switch to determine the score level
-      $theparam = $this->learningPreference[$param];
-      $final_sms = '';
-      switch ($theparam) {
-         case '0':
-         case '1':
-         case '2':
-         case '3':
-            $final_sms = 'does not like this learning mode';
-            break;
-         case '4':
-         case '5':
-         case '6':
-            $final_sms = 'partially likes this learning mode';
-
-            break;
-         case '7':
-         case '8':
-            $final_sms = 'likes this learning mode';
-            break;
-         case '9':
-         case '10':
-            $final_sms = 'loves and enjoys this learning mode';
-            break;
-
-         default:
-            # code...
-            break;
+      if ($this->isLearner()) {
+         return $this->getStudent()->learningPreference();
       }
 
-      return $item_summary = "$this->name $final_sms";
+      if ($this->isTeacher()) {
+         return $this->getInstructor()->teachingPreference();
+      }
+
+      if ($this->isAdmin()) {
+         return $this->getAdmin()->adminPreference();
+      }
+   }
+
+   // manual relationships
+
+   /**
+    * Get the student associated with this user
+    */
+   public function getStudent(string $attr = null)
+   {
+      $student = Student::where('user_id', $this->id)->first();
+      $student_attr = $student[$attr];
+      // if attribute is requested, then get the required attr, else get the whole student object data
+      return $attr ?  $student_attr : $student;
    }
 
 
+   /**
+    * Get the instructor associated with this user
+    */
+   public function getInstructor(string $attr = null)
+   {
+      $instructor = Instructor::where('user_id', $this->id)->first();
+      $instructor_attr = $instructor[$attr];
+      // if attribute is requested, then get the required attr, else get the whole instructor object data
+      return $attr ?  $instructor_attr : $instructor;
+   }
+
+
+
+   /**
+    * Get the Admin associated with this user
+    */
+   public function getAdmin(string $attr = null)
+   {
+      $admin = Admin::where('user_id', $this->id)->first();
+      $admin_attr = $admin[$attr];
+      // if attribute is requested, then get the required attr, else get the whole admin object data
+      return $attr ?  $admin_attr : $admin;
+   }
 
 
 

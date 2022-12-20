@@ -14,9 +14,17 @@ class CourseController extends Controller
     */
    public function index()
    {
-      //   return 'the courses page';
-      $this_route = ucwords(str_replace('_', ' ', basename(url()->current())));
-      return view('student.courses.index', compact('this_route'));
+
+      if (request()->user()->isLearner()) {
+         $courses = Course::all();
+
+         return view('student.courses.index', compact('courses'));
+      }
+
+      if (request()->user()->isTeacher()) {
+         $courses = request()->user()->getInstructor()->courses;
+         return view('instructor.courses.index', compact('courses'));
+      }
    }
 
    /**

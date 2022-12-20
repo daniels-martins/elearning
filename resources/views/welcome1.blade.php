@@ -23,7 +23,7 @@
 
       <div class="p-6 ">
 
-         <div class="p-14 ">
+         {{-- <div class="p-14 ">
             <div class="hidden  px-6 py-4 sm:block">
                @auth
                <div class="">
@@ -38,11 +38,11 @@
                @endif
                @endauth
             </div>
-         </div>
+         </div> --}}
          @auth
-         <div class="flex justify-around cursor-pointer">
-            <div class="bg-green-300 p-14">
-               <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+         <div class="grid mt-10 justify-center align-items-center cursor-pointer">
+            <div class="p-14">
+               <div class="rounded-sm mt-2 text-gray-600 dark:text-gray-400 text-sm">
                   <a href="{{ url('/dashboard') }}"
                      class="p-10 bg-red-300 text-sm text-gray-700 dark:text-gray-500">Dashboard</a>
                </div>
@@ -50,16 +50,16 @@
          </div>
          @else
          <div class="flex justify-evenly ">
-            <div class="bg-green-300 p-7">
+            <div class="bg-green-600 p-7 rounded-sm">
                <div class="mt-2 cursor-pointer text-gray-600 dark:text-gray-400 text-sm">
                   <a href="{{ route('register') }}"
-                     class="ml-4 text-sm text-gray-700 dark:text-gray-500">Register</a>
+                     class="ml-4 text-sm text-white dark:text-gray-500">Register</a>
                </div>
             </div>
 
-            <div class="bg-green-300 p-7 cursor-pointer">
+            <div class="bg-green-600 p-7 rounded-sm cursor-pointer">
                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                  <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500">Log in</a>
+                  <a href="{{ route('login') }}" class="text-sm text-white dark:text-gray-500">Log in</a>
 
                </div>
             </div>

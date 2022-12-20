@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Models\Student;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -30,7 +30,7 @@ return new class extends Migration
          $table->tinyInteger('instructor_led')->unsigned()->nullable(); //scale of 1-10
 
          // foreign key
-         $table->foreignIdFor(User::class);
+         $table->foreignIdFor(Student::class);
          $table->timestamps();
       });
    }

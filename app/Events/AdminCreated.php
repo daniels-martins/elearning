@@ -3,7 +3,7 @@
 namespace App\Events;
 
 use App\Models\User;
-use App\Models\Student;
+use App\Models\Admin;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -12,19 +12,18 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class StudentCreated
+class AdminCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
-      public $student;
+    public $admin;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Student $student)
+    public function __construct(Admin $admin)
     {
-        $this->student  =  $student;
+        $this->admin  =  $admin;
     }
 
     /**

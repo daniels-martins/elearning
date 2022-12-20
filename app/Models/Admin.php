@@ -7,5 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-    use HasFactory;
+   use HasFactory;
+
+
+   /**
+    * this method returns the learning preference for a specific student
+    * 
+    * 
+    */
+   public function adminPreference()
+   {
+      return $this->hasOne(AdminPreference::class);
+   }
 }
