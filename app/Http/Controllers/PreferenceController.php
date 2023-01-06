@@ -76,7 +76,7 @@ class PreferenceController extends Controller
       $preference_iterator_all_columns = Schema::getColumnListing('learning_preferences');
 
       // let's filter the iterator
-      $outOfBounds = ['id', 'created_at', 'updated_at'];
+      $outOfBounds = ['id', 'student_id', 'created_at', 'updated_at'];
 
       
       // let's filter the iterator

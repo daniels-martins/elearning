@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-   <title>{{ config('app.name', 'Laravel') }}</title>
+   <title>{{ config('app.name', 'Swaecc') }}</title>
 
    <!-- Fonts -->
    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -22,44 +22,27 @@
       </div>
 
       <div class="p-6 ">
-
-         {{-- <div class="p-14 ">
-            <div class="hidden  px-6 py-4 sm:block">
-               @auth
-               <div class="">
-
-               </div>
-               <a href="{{ url('/dashboard') }}"
-                  class="p-10 bg-red-300 text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-               @else
-
-               @if (Route::has('register'))
-
-               @endif
-               @endauth
-            </div>
-         </div> --}}
          @auth
          <div class="grid mt-10 justify-center align-items-center cursor-pointer">
             <div class="p-14">
                <div class="rounded-sm mt-2 text-gray-600 dark:text-gray-400 text-sm">
                   <a href="{{ url('/dashboard') }}"
-                     class="p-10 bg-red-300 text-sm text-gray-700 dark:text-gray-500">Dashboard</a>
+                     class="p-10 bg-red-300 text-sm text-gray-700">Dashboard</a>
                </div>
             </div>
          </div>
          @else
          <div class="flex justify-evenly ">
             <div class="bg-green-600 p-7 rounded-sm">
-               <div class="mt-2 cursor-pointer text-gray-600 dark:text-gray-400 text-sm">
+               <div class="mt-2 cursor-pointer">
                   <a href="{{ route('register') }}"
-                     class="ml-4 text-sm text-white dark:text-gray-500">Register</a>
+                     class="ml-4 text-sm text-white">Register</a>
                </div>
             </div>
 
             <div class="bg-green-600 p-7 rounded-sm cursor-pointer">
-               <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                  <a href="{{ route('login') }}" class="text-sm text-white dark:text-gray-500">Log in</a>
+               <div class="mt-2">
+                  <a href="{{ route('login') }}" class="text-sm text-white">Log in</a>
 
                </div>
             </div>

@@ -14,7 +14,7 @@ class TeachingPreference extends Model
 
    protected $guarded = ['id', 'student_id', 'user_id'];
 
-   public function owner()
+   public function instructor()
    {
       return $this->belongsTo(Instructor::class);
    }
