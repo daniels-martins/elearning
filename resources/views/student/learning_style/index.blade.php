@@ -33,7 +33,7 @@
                         {{-- smart web agent for education content creation --}}
                       <b class="capitalize">{{ Auth::user()->name }}</b>  {{ $student->presentLearningPreference($i) }}
                      </p>
-                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ Auth::user()->preferences->$i * 10 }}% of {{ Auth::user()->name }}'s Courses are tailored this way</h5>
+                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $preferences_array[$i] }}% of {{ Auth::user()->name }}'s Courses are tailored this way</h5>
                   </a>
 
                   @endforeach

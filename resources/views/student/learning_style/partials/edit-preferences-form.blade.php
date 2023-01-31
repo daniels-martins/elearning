@@ -10,8 +10,9 @@
         </h2>
 
     </header>
-
+    {{-- {{ dd($preference) }} --}}
     <form method="post" action="{{ route('learning_preference.update', $preference) }}" class="mt-6 space-y-6">
+        
         @csrf
         @method('patch')
         <script>

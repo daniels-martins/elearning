@@ -1,0 +1,18 @@
+the application should have the followign features:
+1. collect of eductional shorts from youtube links, for those who like videos, these links would be the links that would be 
+used to simulate video lessons in the application
+2. based on the whole user preference, an average summary on each of them should be given so that when you add all the % you get 100%
+3. 
+
+
+
+
+What makes it a smart web app for education content creation
+
+Based on your preferences set, when you go to your dashboard, the contents should change. i.e for every change made to the preference
+there should be a combination of resources and materials to suit your preferences.
+The instructor's job is to upload courses only.
+
+The student duty is to access courses
+
+The app's duty is to match the student's preferences with the courses created by the instructors.
