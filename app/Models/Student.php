@@ -10,25 +10,19 @@ class Student extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-
-
-
-    
-
    // Relationships
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class);
+    }
 
    /**
     * this method returns the learning preference for a specific student
-    * 
-    * 
     */
    public function learningPreference()
    {
-      // return 'foo';
       return $this->hasOne(LearningPreference::class);
    }
-
-
 
 
    // presenter

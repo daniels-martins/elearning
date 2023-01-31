@@ -4,21 +4,22 @@
          {{ thisRoute() }}
       </h2>
    </x-slot>
-
    <div class="p-12">
       <div class="grid grid-cols-5 grid-flow-col gap-4">
          {{-- side bar --}}
          @include('student.partials.sidebar')
 
          {{-- main content --}}
+         
          <div class="col-span-4 rounded-lg">
+            @include('general.partials.alert')
 
             <div href="#"
                class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                <h5 class="mb-2 text-xl font-lighter tracking-tight text-gray-900 dark:text-white">
                   Welcome, {{ ucfirst(auth()->user()->name) }} </h5>
-               <small class="font-normal text-gray-700 dark:text-gray-400"> Here's what happened with your learning
-                  system.</small>
+                  <p class="font-normal text-center text-gray-700 dark:text-gray-200"> View all registered courses here.</p>
+
             </div>
 
             <div class="p-10 grid-cols-3 bg-gray-200 rounded-lg">
@@ -39,7 +40,7 @@
                      <a href="#" caption='Come back next Year to register this course'
                         title="Semester is currently closed, come back next year"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Register this course
+                        View this course today
                         <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                            xmlns="http://www.w3.org/2000/svg">
                            <path fill-rule="evenodd"
