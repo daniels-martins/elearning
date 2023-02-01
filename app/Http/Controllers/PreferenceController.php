@@ -154,8 +154,8 @@ class PreferenceController extends Controller
             if (!empty($data))   $requestData[$key] = $data;
         // dd('hi', $requestData);
         if ($preference->update($requestData))
-            return back()->with('status', 'preference-updated')->with('styling', 'success');
-        return back()->with('status', 'preference-update-failed')->with('styling', 'danger');
+            return back()->with('success', 'preference-updated')->with('styling', 'success');
+        return back()->with('success', 'preference-update-failed')->with('styling', 'danger');
     }
 
     /**

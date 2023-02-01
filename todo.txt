@@ -1,11 +1,9 @@
 the application should have the followign features:
-1. collect of eductional shorts from youtube links, for those who like videos, these links would be the links that would be 
+1. collect links of eductional shorts from youtube, for those who like videos, these links would be the links that would be 
 used to simulate video lessons in the application
-2. based on the whole user preference, an average summary on each of them should be given so that when you add all the % you get 100%
-3. 
-
-
-
+2. based on the whole user preference, an average summary on each of them should be given so that they all sum up to get 100%__done
+3. ability to delete or unregister a course __done
+4. ability to register a course__done
 
 What makes it a smart web app for education content creation
 

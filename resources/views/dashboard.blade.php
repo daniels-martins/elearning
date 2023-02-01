@@ -87,7 +87,7 @@
                                     <object width="400" height="350" data="http://www.youtube.com/v/Ahg6qcgoay4"
                                         type="application/x-shockwave-flash">
                                         <param name="src" value="http://www.youtube.com/v/Ahg6qcgoay4" />
-                                        <h2 class="capitalize"> Video is currently unavailable</h2>
+                                        <h2 class="capitalize text-white text-center"> Video is currently unavailable</h2>
                                     </object>
                                 </a>
                             @endfor

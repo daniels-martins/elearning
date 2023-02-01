@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class StudentCourseController extends Controller
@@ -41,28 +42,29 @@ class StudentCourseController extends Controller
      */
     public function store(Request $request)
     {
-        $courses = Course::all();
-        // attach course to student or instructor
-        if (request()->user()->isLearner()) {
-            // better solution
-            $duplicate = DB::table('course_student')
-                ->whereStudentId($request->user()->getStudent()->id)
-                ->whereCourseId($request->course)
-                ->count();
-            if ($duplicate > 0) {
-                Session::flash('warning', 'Course already registered');
-                return redirect()->route('courses.index')->with('courses', $courses);
-            }
-            // attach course to student
-            $operation = $request->user()->getStudent()->courses()->attach($request->course);
+        $request->user()->isLearner() ? $authStudent  = $request->user()->getStudent() :  dd('student not found');
 
-            if (!$operation) {
-                Session::flash('danger', 'Oops! Course registration failed');
-                return redirect()->route('courses.index')->with('courses', $courses);
-            }
-            Session::flash('success', 'Course registered successfully');
+        // dd($request->all());
+        $courses = Course::all();
+        // attach course to student only
+        // better solution
+        // $duplicate = DB::table('course_student')->whereStudentId($authStudent->id)->whereCourseId($request->course)->count();
+
+        // best solution
+        $duplicate = $authStudent->courses->contains($request->course);
+
+        if ($duplicate) {
+            Session::flash('warning', 'Course already registered');
             return redirect()->route('courses.index')->with('courses', $courses);
         }
+        // attach course to student. NB: attach() returns null by default when successful.
+        $operation = $authStudent->courses()->attach($request->course);
+        if ($operation !== null) {
+            Session::flash('danger', 'Oops! Course registration failed');
+            return redirect()->route('courses.index')->with('courses', $courses);
+        }
+        Session::flash('success', 'Course registered successfully');
+        return redirect()->route('courses.index')->with('courses', $courses);
     }
 
     /**
@@ -105,8 +107,15 @@ class StudentCourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Course $course)
     {
-        //
+        // policy check
+        $authStudent  = Auth::user()->getStudent();
+        $policyCheck = $authStudent->courses->contains($course->id);
+        $successful_unlink = $authStudent->courses()->detach($course->id); //detach() returns true;
+
+        return ($policyCheck and $successful_unlink)
+            ? back()->with('success', 'You have unregistered from this Course')
+            : back()->with('error', 'Oops! Error occured. Try again');
     }
 }

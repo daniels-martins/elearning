@@ -38,10 +38,10 @@ Route::middleware('auth')->group(function () {
    |--------------------------------------------------------------------------
    |
    */
-    //  courses routes
+    //  Student courses routes
 
     // hybrid route
-    // register courses for a student or instructor
+    // register courses for a student only
     Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
     Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
 
@@ -59,6 +59,9 @@ Route::middleware('auth')->group(function () {
 
     // register a course for a student
     Route::post('student/courses', [StudentCourseController::class, 'store'])->name('student_courses.store');
+
+    // unlink a course for a student
+    Route::delete('student/courses/{course}', [StudentCourseController::class, 'destroy'])->name('student_courses.destroy');
 
 
 

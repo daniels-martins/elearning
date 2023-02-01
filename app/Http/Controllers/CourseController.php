@@ -16,13 +16,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::all();
-        if (request()->user()->isLearner()) {
-            return view('general.courses.index', compact('courses'));
-        }
-
-        if (request()->user()->isTeacher()) {
-            return view('general.courses.index', compact('courses'));
-        }
+        if (request()->user()->isLearner() or request()->user()->isTeacher())   return view('general.courses.index', compact('courses'));
     }
 
     /**
@@ -34,7 +28,7 @@ class CourseController extends Controller
     {
         // must be an admin to create new courses
         dd('only admins can create new courses in the curriculum');
-        
+
         if (request()->user()->isLearner()) {
             $courses = Course::all();
             return view('student.courses.create', compact('courses'));

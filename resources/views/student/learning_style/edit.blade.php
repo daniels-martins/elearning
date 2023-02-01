@@ -12,7 +12,7 @@
 
             {{-- main content --}}
             <div class="col-span-4 rounded-lg">
-
+            @include('general.partials.alert')
                 <div href="#"
                     class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                     <h5 class="mb-2 text-xl font-lighter tracking-tight text-gray-900 dark:text-white">

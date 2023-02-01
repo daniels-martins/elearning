@@ -4,8 +4,13 @@
 @import '~@fortawesome/fontawesome-free/scss/brands';
 @import 'tailwindcss/tailwind.css';
 
+
+// sweet alert
+
+
 .sugar{
-   color: purple;
+   color: red !important;
+   display: none;
 }
 
 
@@ -13,4 +18,4 @@
 // .justify-between{
 //     display: flex !important;
 //     justify-content: space-between !important;
-}
+// }
