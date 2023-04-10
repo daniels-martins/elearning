@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
-use App\Http\Controllers\StudentController;
 
 class StudentController extends Controller
 {
@@ -18,7 +17,6 @@ class StudentController extends Controller
    {
       $students = Student::all();
       return view('instructor.students.index', compact('students'));
-      return 'al students';
    }
 
    /**
@@ -58,7 +56,7 @@ class StudentController extends Controller
 
       $preference_iterator = array_filter($preference_iterator_all_columns,  fn ($value) => !in_array($value, $outOfBounds));
       // dd($student);
-      return view('instructor.students.shoW', compact('preference_iterator', 'student'));
+      return view('instructor.students.show', compact('preference_iterator', 'student'));
 
    }
 
